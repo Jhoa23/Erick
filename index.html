@@ -1,1 +1,661 @@
 
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Urban Shirts | Camisas</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #f5f5f5;
+            color: #222;
+        }
+
+        /* ENCABEZADO */
+
+        header {
+            background: #111;
+            color: white;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+            background: #25D366;
+            padding: 10px 18px;
+            border-radius: 25px;
+        }
+
+        /* BANNER */
+
+        .hero {
+            min-height: 430px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,0.6),
+                    rgba(0,0,0,0.6)
+                ),
+                url("https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=1400&q=80");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            color: white;
+            max-width: 700px;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 25px;
+        }
+
+        .boton {
+            display: inline-block;
+            text-decoration: none;
+            background: #25D366;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .boton:hover {
+            transform: scale(1.05);
+            background: #1ebe5d;
+        }
+
+        /* PRODUCTOS */
+
+        .productos {
+            padding: 50px 8%;
+        }
+
+        .titulo {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .titulo h2 {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        .titulo p {
+            color: #666;
+        }
+
+        .contenedor-productos {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(230px, 1fr));
+
+            gap: 25px;
+        }
+
+        .producto {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+            transition: 0.3s;
+        }
+
+        .producto:hover {
+            transform: translateY(-7px);
+        }
+
+        .producto img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+        }
+
+        .producto-info {
+            padding: 20px;
+        }
+
+        .producto h3 {
+            font-size: 21px;
+            margin-bottom: 10px;
+        }
+
+        .producto p {
+            color: #666;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .precio {
+            font-size: 25px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .comprar {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            background: #25D366;
+            color: white;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        /* BENEFICIOS */
+
+        .beneficios {
+            background: #111;
+            color: white;
+            padding: 50px 8%;
+            text-align: center;
+        }
+
+        .beneficios h2 {
+            margin-bottom: 30px;
+            font-size: 32px;
+        }
+
+        .beneficios-contenedor {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(200px, 1fr));
+
+            gap: 25px;
+        }
+
+        .beneficio {
+            padding: 20px;
+        }
+
+        .beneficio .icono {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .beneficio h3 {
+            margin-bottom: 8px;
+        }
+
+        /* CONTACTO */
+
+        .contacto {
+            padding: 50px 20px;
+            text-align: center;
+            background: white;
+        }
+
+        .contacto h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .numero {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        /* CELULARES */
+
+        @media (max-width: 600px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 35px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .productos {
+                padding: 40px 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+    <!-- ENCABEZADO -->
+
+    <header>
+
+        <div class="logo">
+            URBAN SHIRTS
+        </div>
+
+        <a
+            href="https://wa.me/593996866885?text=Hola,%20quiero%20información%20sobre%20las%20camisas."
+            target="_blank">
+
+            WhatsApp
+
+        </a>
+
+    </header>
+
+
+    <!-- BANNER PRINCIPAL -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>
+                Camisas que definen tu estilo
+            </h1>
+
+            <p>
+                Diseños modernos, cómodos y perfectos
+                para cualquier ocasión.
+            </p>
+
+            <a
+                class="boton"
+                href="https://wa.me/593996866885?text=Hola,%20quiero%20comprar%20una%20camisa."
+                target="_blank">
+
+                Comprar por WhatsApp
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRODUCTOS -->
+
+    <section class="productos">
+
+        <div class="titulo">
+
+            <h2>
+                Nuestra colección
+            </h2>
+
+            <p>
+                Elige tu camisa favorita
+            </p>
+
+        </div>
+
+
+        <div class="contenedor-productos">
+
+
+            <!-- PRODUCTO 1 -->
+
+            <div class="producto">
+
+                <img
+                    src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=700&q=80"
+                    alt="Camisa clásica">
+
+                <div class="producto-info">
+
+                    <h3>
+                        Camisa Clásica
+                    </h3>
+
+                    <p>
+                        Diseño elegante y versátil,
+                        ideal para ocasiones especiales.
+                    </p>
+
+                    <div class="precio">
+                        $25.00
+                    </div>
+
+                    <a
+                        class="comprar"
+                        href="https://wa.me/593996866885?text=Hola,%20quiero%20comprar%20la%20Camisa%20Clásica%20de%20$25."
+                        target="_blank">
+
+                        Comprar por WhatsApp
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCTO 2 -->
+
+            <div class="producto">
+
+                <img
+                    src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?auto=format&fit=crop&w=700&q=80"
+                    alt="Camisa casual">
+
+                <div class="producto-info">
+
+                    <h3>
+                        Camisa Casual
+                    </h3>
+
+                    <p>
+                        Cómoda y moderna para combinar
+                        con tus outfits diarios.
+                    </p>
+
+                    <div class="precio">
+                        $22.00
+                    </div>
+
+                    <a
+                        class="comprar"
+                        href="https://wa.me/593996866885?text=Hola,%20quiero%20comprar%20la%20Camisa%20Casual%20de%20$22."
+                        target="_blank">
+
+                        Comprar por WhatsApp
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCTO 3 -->
+
+            <div class="producto">
+
+                <img
+                    src="https://images.unsplash.com/photo-1626497764746-6dc36546b388?auto=format&fit=crop&w=700&q=80"
+                    alt="Camisa de lino">
+
+                <div class="producto-info">
+
+                    <h3>
+                        Camisa de Lino
+                    </h3>
+
+                    <p>
+                        Fresca, ligera y perfecta para
+                        un estilo relajado.
+                    </p>
+
+                    <div class="precio">
+                        $30.00
+                    </div>
+
+                    <a
+                        class="comprar"
+                        href="https://wa.me/593996866885?text=Hola,%20quiero%20comprar%20la%20Camisa%20de%20Lino%20de%20$30."
+                        target="_blank">
+
+                        Comprar por WhatsApp
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCTO 4 -->
+
+            <div class="producto">
+
+                <img
+                    src="https://images.unsplash.com/photo-1603252110481-7ba873bf42ab?auto=format&fit=crop&w=700&q=80"
+                    alt="Camisa formal">
+
+                <div class="producto-info">
+
+                    <h3>
+                        Camisa Formal
+                    </h3>
+
+                    <p>
+                        Un diseño sofisticado para
+                        reuniones y eventos.
+                    </p>
+
+                    <div class="precio">
+                        $28.00
+                    </div>
+
+                    <a
+                        class="comprar"
+                        href="https://wa.me/593996866885?text=Hola,%20quiero%20comprar%20la%20Camisa%20Formal%20de%20$28."
+                        target="_blank">
+
+                        Comprar por WhatsApp
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCTO 5 -->
+
+            <div class="producto">
+
+                <img
+                    src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=700&q=80"
+                    alt="Camisa Oversize">
+
+                <div class="producto-info">
+
+                    <h3>
+                        Camisa Oversize
+                    </h3>
+
+                    <p>
+                        Estilo urbano y moderno para
+                        quienes buscan comodidad.
+                    </p>
+
+                    <div class="precio">
+                        $27.00
+                    </div>
+
+                    <a
+                        class="comprar"
+                        href="https://wa.me/593996866885?text=Hola,%20quiero%20comprar%20la%20Camisa%20Oversize%20de%20$27."
+                        target="_blank">
+
+                        Comprar por WhatsApp
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- BENEFICIOS -->
+
+    <section class="beneficios">
+
+        <h2>
+            ¿Por qué comprar con nosotros?
+        </h2>
+
+        <div class="beneficios-contenedor">
+
+            <div class="beneficio">
+
+                <div class="icono">
+                    👕
+                </div>
+
+                <h3>
+                    Buena calidad
+                </h3>
+
+                <p>
+                    Camisas seleccionadas
+                    para ofrecer comodidad.
+                </p>
+
+            </div>
+
+
+            <div class="beneficio">
+
+                <div class="icono">
+                    🚚
+                </div>
+
+                <h3>
+                    Entregas
+                </h3>
+
+                <p>
+                    Coordinamos tu entrega
+                    directamente por WhatsApp.
+                </p>
+
+            </div>
+
+
+            <div class="beneficio">
+
+                <div class="icono">
+                    💬
+                </div>
+
+                <h3>
+                    Atención personalizada
+                </h3>
+
+                <p>
+                    Resolvemos tus dudas
+                    antes de realizar tu compra.
+                </p>
+
+            </div>
+
+
+            <div class="beneficio">
+
+                <div class="icono">
+                    ⭐
+                </div>
+
+                <h3>
+                    Variedad
+                </h3>
+
+                <p>
+                    Diferentes estilos para
+                    encontrar el que más te guste.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACTO -->
+
+    <section class="contacto">
+
+        <h2>
+            ¿Encontraste tu camisa favorita?
+        </h2>
+
+        <p>
+            Escríbenos por WhatsApp y realiza tu pedido.
+        </p>
+
+        <div class="numero">
+            📱 0996866885
+        </div>
+
+        <a
+            class="boton"
+            href="https://wa.me/593996866885?text=Hola,%20quiero%20realizar%20un%20pedido."
+            target="_blank">
+
+            💬 Contactar por WhatsApp
+
+        </a>
+
+    </section>
+
+
+    <!-- PIE DE PÁGINA -->
+
+    <footer>
+
+        <p>
+            © 2026 Urban Shirts
+        </p>
+
+        <p>
+            Camisas para todos los estilos.
+        </p>
+
+    </footer>
+
+
+</body>
+</html>
